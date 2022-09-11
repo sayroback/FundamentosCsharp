@@ -19,8 +19,31 @@ var platzi = new Escuela("platzi", 2014, tipo: TiposEscuela.Secundaria, ciudad: 
 //platzi.cuidad = "Mexico";
 //platzi.tipoEscuela = TiposEscuela.Secundaria;
 
-var curso = new Cursos() { Nombre = "301" };
+platzi.CursosEscuela = new Cursos[] 
+{ 
+    new Cursos { Nombre = "301" }, 
+    new Cursos { Nombre = "201" }, 
+    new Cursos { Nombre = "101" } 
+};
 
-Console.WriteLine(platzi);
+//cursos[0] = new Cursos { Nombre = "301" };
+//cursos[1] = new Cursos { Nombre = "201" };
+//cursos[2] = new Cursos { Nombre = "101" };
+
+imprimirEscuela(platzi);
 Console.WriteLine("=========");
-Console.WriteLine(curso.Nombre + ", " + curso.UniqueID);
+
+void imprimirEscuela(Escuela escuela)
+{
+    Console.WriteLine("=========");
+    Console.WriteLine("Cursos de la escuela: " + escuela.nombreEscuela);
+    imprimirCursos(escuela.CursosEscuela);
+}
+
+void imprimirCursos(Cursos[] cursos)
+{
+    foreach (var curso in cursos)
+    {
+    Console.WriteLine(curso.Nombre + ", " + curso.UniqueID);
+    }
+}

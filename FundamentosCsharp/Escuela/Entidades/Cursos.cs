@@ -11,7 +11,6 @@ namespace FundamentosCsharp.Escuela.Entidades
         public string UniqueID { get; private set; }
         public string Nombre { get; set; }
         public TiposJornada Jornada { get; set; }
-
         public Cursos() => UniqueID = Guid.NewGuid().ToString();
         
     } 

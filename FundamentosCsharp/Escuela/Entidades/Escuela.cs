@@ -12,6 +12,7 @@ namespace FundamentosCsharp.Escuela.Entidades
         public int añoFundacion { get; set; }
         public string? cuidad { get; set; }
         public TiposEscuela tipoEscuela { get; set; }
+        public Cursos[] CursosEscuela { get; set; }
         //public Escuela(string nombreEscuela, int añoFundacion, string cuidad)
         //{
         //    this.nombreEscuela = nombreEscuela;
