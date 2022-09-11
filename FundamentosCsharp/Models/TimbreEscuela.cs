@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FundamentosCsharp.Models
 {
-    class Escuela
+    class TimbreEscuela
     {
         public string nombre;
         public string direccion;
