@@ -14,6 +14,11 @@ namespace FundamentosCsharp
             Cerveza cerveza = new Cerveza(3);
             cerveza.Beber();
             cerveza.MaxRecomendado();
+
+            Escuela escuela = new Escuela();
+            escuela.nombre = "Franco";
+            Console.WriteLine(escuela.nombre);
+            escuela.Timbrar();
         }
     }
 }
