@@ -1,11 +1,11 @@
 ﻿using FundamentosCsharp.Models;
 using static System.Console;
 
-namespace FundamentosCsharp.Escuela.Entidades
+namespace CoreEscuela
 {
-  public class Ejemplos
+  public class EscuelaEngine
   {
-    public Ejemplos()
+    public EscuelaEngine()
     {
 
       Bebida bebida = new Bebida("Fanta", 2);
@@ -37,7 +37,7 @@ namespace FundamentosCsharp.Escuela.Entidades
       // agregar elemento a una lista
       platzi.CursosEscuela.Add(new Cursos { Nombre = "401", Jornada = TiposJornada.Tarde });
       platzi.CursosEscuela.Add(new Cursos { Nombre = "202", Jornada = TiposJornada.Tarde });
-      
+
       var otraColeccion = new List<Cursos>()
       {
         new Cursos { Nombre = "501", Jornada = TiposJornada.Mañana },
@@ -46,32 +46,49 @@ namespace FundamentosCsharp.Escuela.Entidades
       };
       //Agrega otra colleccion a una colleccion
       platzi.CursosEscuela.AddRange(otraColeccion);
-      
+
       imprimirEscuela(platzi);
       WriteLine("=========");
       //Elimina todos los elementos de una collecion
       //platzi.CursosEscuela.Clear();
-
-      //Remover un elemento
-      // platzi.CursosEscuela.Remove();
+      /*
+      Cursos tmp = new Cursos { Nombre = "101-Vacaciones", Jornada = TiposJornada.Noche};
+      platzi.CursosEscuela.Add(tmp);
       imprimirEscuela(platzi);
 
-      void imprimirEscuela(Escuela escuela)
-      {
-        WriteLine("=========");
-        WriteLine("Cursos de la escuela: " + escuela.nombreEscuela);
-        imprimirCursos(escuela.CursosEscuela);
-      }
+      //Remover un elemento
+      WriteLine("=========");
+      platzi.CursosEscuela.Remove(tmp);
+      imprimirEscuela(platzi);
 
-      void imprimirCursos(List<Cursos> cursos)
-      {
-        foreach (var curso in cursos)
-        {
-          WriteLine(curso.Nombre + ", " + curso.UniqueID);
-        }
-      }
-
-
+      //Remover un elemento
+      WriteLine("=========");
+      WriteLine(tmp.GetHashCode());
+      Predicate<Cursos> miAlgoritmo = predicado;
+      platzi.CursosEscuela.RemoveAll(miAlgoritmo);
+      platzi.CursosEscuela.RemoveAll((cur) => cur.Nombre == "201");
+      imprimirEscuela(platzi);
+       */
     }
+    #region metodos
+    void imprimirEscuela(Escuela escuela)
+    {
+      WriteLine("=========");
+      WriteLine("Cursos de la escuela: " + escuela.nombreEscuela);
+      imprimirCursos(escuela.CursosEscuela);
+    }
+
+    void imprimirCursos(List<Cursos> cursos)
+    {
+      foreach (var curso in cursos)
+      {
+        WriteLine(curso.Nombre + ", " + curso.UniqueID);
+      }
+    }
+    private bool predicado(Cursos curso)
+    {
+      return curso.Nombre == "301";
+    }
+    #endregion
   }
 }
