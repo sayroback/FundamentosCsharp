@@ -4,4 +4,5 @@ using static System.Console;
 using FundamentosCsharp.Models;
 using FundamentosCsharp.Escuela.Entidades;
 
-//var ejemplos = new Ejemplos();
+var ejemplos = new Ejemplos();
+
